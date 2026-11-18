@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="The Divine Collection by Ashton Aaron. Books with companion workbooks, available now. Find the one that speaks to where you are, and start there." />
+    <link rel="icon" href="data:," />
+    <title>The Divine Collection | Books by Ashton Aaron</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --navy:#1b2a4e;
+        --navy-deep:#111c36;
+        --navy-card:#22335c;
+        --navy-line:#33477a;
+        --gold:#c9a227;
+        --gold-soft:#e3c766;
+        --cream:#f7f3ea;
+        --cream-dim:#d9d2bf;
+        --cream-faint:#aeb4c4;
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{
+        margin:0;
+        background:var(--navy-deep);
+        color:var(--cream);
+        font-family:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size:17px;
+        line-height:1.65;
+        -webkit-font-smoothing:antialiased;
+      }
+      h1,h2,h3{font-family:"Libre Baskerville", Georgia, "Times New Roman", serif; font-weight:700; line-height:1.25; margin:0}
+      p{margin:0}
+      a{color:inherit}
+      .wrap{max-width:1060px; margin:0 auto; padding:0 20px}
+      .narrow{max-width:720px; margin:0 auto}
+
+      /* Buttons */
+      .btn{
+        display:inline-flex; align-items:center; justify-content:center; gap:10px;
+        min-height:52px; padding:14px 26px;
+        background:var(--gold); color:#1b2a4e;
+        font-weight:800; font-size:16px; letter-spacing:.01em;
+        text-decoration:none; border-radius:6px; border:2px solid var(--gold);
+        text-align:center;
+      }
+      .btn:active{transform:translateY(1px)}
+      .btn-outline{background:transparent; color:var(--cream); border-color:var(--cream-dim)}
+      .btn-block{width:100%}
+
+      /* Hero */
+      .hero{
+        background:var(--navy);
+        border-bottom:3px solid var(--gold);
+        padding:44px 0 52px;
+        position:relative;
+        overflow:hidden;
+      }
+      .hero::after{
+        content:""; position:absolute; inset:0; pointer-events:none;
+        background-image:radial-gradient(rgba(247,243,234,.055) 1px, transparent 1px);
+        background-size:22px 22px;
+      }
+      .hero .wrap{position:relative; z-index:1}
+      .byline{
+        display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px;
+        font-size:13px; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+        color:var(--gold-soft);
+      }
+      .byline .dot{width:5px; height:5px; border-radius:50%; background:var(--gold); flex:none}
+      .byline .handle{letter-spacing:.02em; text-transform:none; font-size:14px}
+      .byline .handle a{color:var(--gold-soft); text-decoration:underline; text-underline-offset:3px; padding:6px 2px; display:inline-block}
+      .hero h1{
+        font-size:clamp(32px, 8.4vw, 58px);
+        margin:26px 0 20px;
+        max-width:15em;
+      }
+      .hero h1 em{font-style:italic; color:var(--gold-soft)}
+      .hero .promise{
+        font-size:clamp(18px, 4.6vw, 21px);
+        color:var(--cream);
+        max-width:34em;
+      }
+      .hero .promise strong{color:#fff}
+      .hero .sub{margin-top:14px; color:var(--cream-dim); max-width:34em}
+
+      /* Books */
+      section{padding:56px 0}
+      .kicker{
+        font-size:13px; font-weight:800; letter-spacing:.16em; text-transform:uppercase;
+        color:var(--gold); margin-bottom:14px; display:flex; align-items:center; gap:12px;
+      }
+      .kicker::before{content:""; width:28px; height:2px; background:var(--gold); flex:none}
+      h2{font-size:clamp(26px, 6vw, 36px); margin-bottom:18px}
+      .lead{font-size:18px; color:var(--cream)}
+      .books{display:grid; gap:22px; margin-top:30px}
+      .book{
+        border:1px solid var(--navy-line); border-radius:10px; overflow:hidden;
+        background:var(--navy-card); display:flex; flex-direction:column;
+      }
+      .book img{
+        display:block; width:100%; height:auto;
+        border-bottom:1px solid var(--navy-line);
+      }
+      .book-body{padding:24px 22px 26px; display:flex; flex-direction:column; flex:1}
+      .book h3{font-size:22px; color:#fff}
+      .book .subtitle{
+        font-size:14px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+        color:var(--gold-soft); margin-top:8px;
+      }
+      .book .line{color:var(--cream-dim); margin-top:12px; font-size:16px}
+      .book .meta{
+        margin-top:14px; font-size:14px; font-weight:600; color:var(--cream-faint);
+      }
+      .book .buy{margin-top:20px; display:grid; gap:10px}
+      .shelf-note{
+        margin-top:30px; text-align:center;
+        color:var(--cream-faint); font-size:15px;
+      }
+
+      /* Footer */
+      footer{
+        background:#0c1529; border-top:3px solid var(--gold);
+        padding:36px 0 44px; text-align:center;
+      }
+      footer .sign{font-family:"Libre Baskerville", Georgia, serif; font-style:italic; font-size:19px; color:var(--cream)}
+      footer .author{margin-top:14px; font-weight:700; color:#fff; font-size:16px}
+      footer .roles{color:var(--cream-dim); font-size:14.5px; margin-top:2px}
+      footer .handle-line{margin-top:12px; font-size:15px}
+      footer .handle-line a{color:var(--gold-soft); font-weight:700; text-decoration:underline; text-underline-offset:3px; display:inline-block; padding:8px 4px; min-height:36px}
+
+      @media (min-width:720px){
+        .hero{padding:64px 0 68px}
+        .books{grid-template-columns:1fr 1fr}
+        section{padding:72px 0}
+      }
+      @media (prefers-reduced-motion: reduce){
+        html{scroll-behavior:auto}
+      }
+    </style>
+  </head>
+  <body>
+
+    <header class="hero">
+      <div class="wrap">
+        <div class="byline">
+          <span>InnerG Studios</span>
+          <span class="dot" aria-hidden="true"></span>
+          <span class="handle"><a href="https://ig.me/m/iam.ashtonaaron">@iam.ashtonaaron</a></span>
+        </div>
+
+        <h1>The Divine Collection</h1>
+
+        <p class="promise">Each book is written, and each one comes with its own workbook. <strong>No release dates, no waiting.</strong> Find the one that speaks to where you are, and start there.</p>
+        <p class="sub">Every bundle pairs the book with its companion workbook, plus Chapter 1 free, so you can read and work it first. The bundle is the full experience, the book and the work that goes with it.</p>
+      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="books-h">
+        <div class="wrap">
+          <p class="kicker">The Books</p>
+          <h2 id="books-h">Available now.</h2>
+          <p class="lead">Each book stands on its own. Read the one that meets you where you are today, and the others will be here when you are ready for them.</p>
+
+          <div class="books">
+            <article class="book">
+              <img src="images/clutter-free-mind.png" alt="The Importance of a Clutter-Free Mind, Book and Companion Workbook" />
+              <div class="book-body">
+                <h3>The Importance of a Clutter-Free Mind</h3>
+                <p class="subtitle">Clear one small space. Change your whole day.</p>
+                <p class="line">If your mind feels loud, crowded, and tired before the day even starts, this book is the quiet moment you have been missing.</p>
+                <p class="meta">171-page book + 74-page workbook</p>
+                <div class="buy">
+                  <a class="btn btn-block" href="https://innergstudios.gumroad.com/l/clutter-free-mind-bundle">Get the Bundle - $27</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="book">
+              <img src="images/healing-after-a-loss.png" alt="Healing After a Loss, Book and Companion Workbook" />
+              <div class="book-body">
+                <h3>Healing After a Loss</h3>
+                <p class="subtitle">For Parents Who Have Experienced the Loss of a Child</p>
+                <p class="line">If you are holding this book, you are carrying something no parent should ever have to carry.</p>
+                <p class="meta">53-page book + 35-page workbook</p>
+                <div class="buy">
+                  <a class="btn btn-block" href="https://innergstudios.gumroad.com/l/healing-after-a-loss-bundle">Get the Bundle - $27</a>
+                  <a class="btn btn-outline btn-block" href="https://innergstudios.gumroad.com/l/healing-after-a-loss">Book Only - $17</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="book">
+              <img src="images/navigating-grief-across-generations.png" alt="Navigating Grief Across Generations, Book and Companion Workbook" />
+              <div class="book-body">
+                <h3>Navigating Grief Across Generations</h3>
+                <p class="subtitle">A Comprehensive Guide</p>
+                <p class="line">If you are holding this book, someone you love is gone, or someone you love is grieving. Maybe both.</p>
+                <p class="meta">69-page book + 44-page workbook</p>
+                <div class="buy">
+                  <a class="btn btn-block" href="https://innergstudios.gumroad.com/l/navigating-grief-across-generations-bundle">Get the Bundle - $27</a>
+                  <a class="btn btn-outline btn-block" href="https://innergstudios.gumroad.com/l/navigating-grief-across-generations">Book Only - $17</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="book">
+              <img src="images/breaking-free.png" alt="Breaking Free: Discovering Your Authentic Self, Book and Companion Workbook" />
+              <div class="book-body">
+                <h3>Breaking Free: Discovering Your Authentic Self</h3>
+                <p class="line">Picture a morning when the day is already decided before your feet touch the floor.</p>
+                <p class="meta">58-page book + 43-page workbook</p>
+                <div class="buy">
+                  <a class="btn btn-block" href="https://innergstudios.gumroad.com/l/breaking-free-discovering-your-authentic-self-bundle">Get the Bundle - $27</a>
+                  <a class="btn btn-outline btn-block" href="https://innergstudios.gumroad.com/l/breaking-free-discovering-your-authentic-self">Book Only - $17</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="book">
+              <img src="images/breaking-through.png" alt="Breaking Through: Unleashing Your Potential and Achieving Mental Freedom, Book and Companion Workbook" />
+              <div class="book-body">
+                <h3>Breaking Through: Unleashing Your Potential and Achieving Mental Freedom</h3>
+                <p class="line">Being stuck is not laziness. It is not weakness. It is not a character flaw.</p>
+                <p class="meta">91-page book + 51-page workbook</p>
+                <div class="buy">
+                  <a class="btn btn-block" href="https://innergstudios.gumroad.com/l/breaking-through-unleashing-your-potential-and-achieving-mental-freedom-bundle">Get the Bundle - $27</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <p class="shelf-note">More books from The Divine Collection join this shelf as they publish.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap narrow">
+        <p class="sign">Peace and love. Find the book that meets you where you are, and let it walk with you. Asé.</p>
+        <p class="author">Ashton Aaron</p>
+        <p class="roles">Visionary Founder, The Aaron Foundation | InnerG Studios</p>
+        <p class="handle-line"><a href="https://ig.me/m/iam.ashtonaaron">@iam.ashtonaaron on Instagram</a></p>
+      </div>
+    </footer>
+
+  </body>
+</html>
